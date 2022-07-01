@@ -6,7 +6,7 @@ export default function BmiCalculator() {
   const [bmi,setBmi] = useState('')
   const [message, setMessage] = useState(false)
 
-  let imgSrc = ''
+  
 
   const calcBmi = (e)=>{
      e.preventDefault()
