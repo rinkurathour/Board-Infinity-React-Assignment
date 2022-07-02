@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 export default function Navbar() {
+
+  const list = useSelector((state)=>state?.list)
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light ">
+      <nav className="navbar sticky-top  navbar-expand-lg bg-light " >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">Board-Infinity-Assignment</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +27,11 @@ export default function Navbar() {
 
             </ul>
            
-            <i className="fas fa-cart-plus " ></i>
+          
+            <Link  to ='/showitem'>
+            <i className="fa fa-shopping-cart black" aria-hidden="true">{list?list.length:null}</i>
+            
+            </Link>
 
           </div>
         </div>
